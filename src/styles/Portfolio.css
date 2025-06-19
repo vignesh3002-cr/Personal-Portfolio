@@ -1,0 +1,292 @@
+/* src/styles/portfolio.css */
+
+.portfolio-wrapper {
+  min-height: 100vh;
+  padding: 1.5rem;
+  font-family: sans-serif;
+  background: linear-gradient(to bottom,rgb(246, 80, 246), #f3f4f6);
+  animation: fadeIn 1s ease;
+}
+
+.portfolio-header {
+  text-align: center;
+  padding: 2.5rem 0;
+  animation: slideDown 1s ease;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 9999px;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  transition: transform 0.7s;
+}
+
+.portfolio-title:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-subtitle {
+  font-size: 1.125rem;
+  color: #4b5563;
+}
+
+.portfolio-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.github-icon:hover {
+  color: #000000;
+  transform: scale(1.2);
+}
+
+.linkedin-icon:hover {
+  color: #0a66c2;
+  transform: scale(1.2);
+}
+
+.mail-icon:hover {
+  color: #c71610;
+  transform: scale(1.2);
+}
+
+.portfolio-content {
+  max-width: 80rem;
+  margin: 2.5rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .portfolio-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .full-width {
+    grid-column: span 2;
+  }
+}
+
+.portfolio-card {
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color:rgb(185 111 197);
+  transition: box-shadow 0.5s ease;
+}
+
+.portfolio-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-card-body {
+  padding: 1.5rem;
+}
+
+.portfolio-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.portfolio-text {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.portfolio-list {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  color: #4b5563;
+}
+
+.portfolio-button {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.project_view{
+  background-color: rgb(182, 20, 197);
+  padding: 10px;
+  margin-top: 5px;
+  margin-left: 60%;
+}
+.project_view:hover{
+  transform: scale(1.05);
+  background-color: indigo;
+}
+.resume-button {
+  background-color: #16a34a;
+}
+
+.resume-button:hover {
+  background-color: #15803d;
+  transform: scale(1.05);
+}
+
+.contact-button {
+  background-color: #2563eb;
+}
+
+.contact-button:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.text-center {
+  text-align: center;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  transition: transform 0.3s;
+}
+
+.skill-item:hover {
+  transform: scale(1.05);
+}
+
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+  object-fit: contain;
+}
+#sections-container:hover{
+ background-color: #f77cf1;
+ width: 10%;
+}
+.dropdown-button{
+  background-color: #000000;
+  padding-bottom: 8Px;
+  padding-top: 8Px;
+  padding-right: 8Px;
+  margin-left:0% ;
+  width: 100%;
+  border-bottom: #f3f4f6 2px solid;
+}
+
+.dropdown-button:hover{
+  text-transform: uppercase;
+}
+.codsoft-image{
+   width: 80px;
+  height: 80px;
+  border-radius: 9999px;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+}
+.exp{
+  position: absolute;
+}
+.exp-text{
+  position: absolute;
+  width: 500px;
+  left: 65%;
+  top: 130px;
+}
+#experience{
+  height: 350px;
+  
+}
+#exp-T2{
+  position: absolute;
+  left:65%;
+  width:300px;
+  
+}
+#exp-P1{
+  position: absolute;
+  top: 100%;
+  width: 300px;
+  left: 65%;
+  color: #292b2e;
+}
+.project_img{
+  height: 200px;
+  width: 300px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.project h3{
+  padding: 10px;
+  background-color: #c202ee;
+  color: #f5f3f6;
+}
+.project{ 
+  flex: 0 0 auto;
+  background: #d28ad4;
+  padding: 15px;
+  margin-left: 30px;
+  border-radius: 10px;
+  min-width: 350px;
+  max-width: 350px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.project:hover{
+  transform: scale(1.04);
+}
+.Project_cards{
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+.full-width{
+  height: 400px;
+}
+.portfolio-section-title{
+  margin: 10px;
+}
+.Project_cards::-webkit-scrollbar {
+  display: none;
+}
+.course_txt{
+  margin-left: 100px;
+  margin-top: 5px;
+}
+.course_button{
+  margin-left: 100px;
+  margin-top: 5px;
+  background-color: orange;
+}
+.contact{
+  height: 200px;
+}
