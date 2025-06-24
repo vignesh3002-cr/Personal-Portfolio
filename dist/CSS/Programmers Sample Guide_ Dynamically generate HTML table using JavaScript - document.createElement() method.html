@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://www.mysamplecode.com/2012/04/generate-html-table-using-javascript.html -->
+<html class="v2" dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr" style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/3566091532-css_bundle_v2.css" rel="stylesheet" type="text/css">
+<meta content="width=1100" name="viewport">
+
+<meta content="blogger" name="generator">
+<link href="https://www.mysamplecode.com/favicon.ico" rel="icon" type="image/x-icon">
+<link href="https://www.mysamplecode.com/2012/04/generate-html-table-using-javascript.html" rel="canonical">
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<link href="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/Generate HTML table dynamically using JavaScript.jpg" rel="image_src">
+<meta content="https://www.mysamplecode.com/2012/04/generate-html-table-using-javascript.html" property="og:url">
+<meta content="Dynamically generate HTML table using JavaScript - document.createElement() method" property="og:title">
+<meta content="This tutorial covers the following topics    Create a Row dynamically inside the table from form data  Add a Delete button to the added tabl..." property="og:description">
+<meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6mrU8-UiY5CMhncC9M52H2b-bTc-4JLnRasz5CLlOCx_cfVlF61d4IWvRGXWOI__CtuK9qVfW5BrZnD2Cjntox0O5wT9Hj1d4obmMTEI446JeQgsbXL0iEKWHTrxOsCUCANHfmjSOLkA/w1200-h630-p-k-no-nu/Generate+HTML+table+dynamically+using+JavaScript.jpg" property="og:image">
+<title>Programmers Sample Guide: Dynamically generate HTML table using JavaScript - document.createElement() method</title>
+<style type="text/css">@font-face{font-family:'Calligraffitti';font-style:normal;font-weight:400;font-display:swap;src:url(//fonts.gstatic.com/s/calligraffitti/v19/46k2lbT3XjDVqJw3DCmCFjE0vkFeOZc.woff2)format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'Ubuntu';font-style:normal;font-weight:700;font-display:swap;src:url(//fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjvWyNL4U.woff2)format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}@font-face{font-family:'Ubuntu';font-style:normal;font-weight:700;font-display:swap;src:url(//fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjtGyNL4U.woff2)format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}@font-face{font-family:'Ubuntu';font-style:normal;font-weight:700;font-display:swap;src:url(//fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjvGyNL4U.woff2)format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Ubuntu';font-style:normal;font-weight:700;font-display:swap;src:url(//fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjs2yNL4U.woff2)format('woff2');unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;}@font-face{font-family:'Ubuntu';font-style:normal;font-weight:700;font-display:swap;src:url(//fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjvmyNL4U.woff2)format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Ubuntu';font-style:normal;font-weight:700;font-display:swap;src:url(//fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjsGyN.woff2)format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}</style>
+<style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Awesome Inc.
+Designer: Tina Chen
+URL:      tinachen.org
+----------------------------------------------- */
+/* Content
+----------------------------------------------- */
+body {
+font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #444444;
+background: #eeeeee none repeat scroll top left;
+}
+html body .content-outer {
+min-width: 0;
+max-width: 100%;
+width: 100%;
+}
+a:link {
+text-decoration: none;
+color: #3778cd;
+}
+a:visited {
+text-decoration: none;
+color: #4d469c;
+}
+a:hover {
+text-decoration: underline;
+color: #3778cd;
+}
+.body-fauxcolumn-outer .cap-top {
+position: absolute;
+z-index: 1;
+height: 276px;
+width: 100%;
+background: transparent none repeat-x scroll top left;
+_background-image: none;
+}
+/* Columns
+----------------------------------------------- */
+.content-inner {
+padding: 0;
+}
+.header-inner .section {
+margin: 0 16px;
+}
+.tabs-inner .section {
+margin: 0 16px;
+}
+.main-inner {
+padding-top: 30px;
+}
+.main-inner .column-center-inner,
+.main-inner .column-left-inner,
+.main-inner .column-right-inner {
+padding: 0 5px;
+}
+*+html body .main-inner .column-center-inner {
+margin-top: -30px;
+}
+#layout .main-inner .column-center-inner {
+margin-top: 0;
+}
+/* Header
+----------------------------------------------- */
+.header-outer {
+margin: 0 0 0 0;
+background: transparent none repeat scroll 0 0;
+}
+.Header h1 {
+font: normal bold 40px 'Courier New', Courier, FreeMono, monospace;
+color: #444444;
+text-shadow: 0 0 -1px #000000;
+}
+.Header h1 a {
+color: #444444;
+}
+.Header .description {
+font: normal normal 20px Calligraffitti;
+color: #444444;
+}
+.header-inner .Header .titlewrapper,
+.header-inner .Header .descriptionwrapper {
+padding-left: 0;
+padding-right: 0;
+margin-bottom: 0;
+}
+.header-inner .Header .titlewrapper {
+padding-top: 22px;
+}
+/* Tabs
+----------------------------------------------- */
+.tabs-outer {
+overflow: hidden;
+position: relative;
+background: #eeeeee url(https://resources.blogblog.com/blogblog/data/1kt/awesomeinc/tabs_gradient_light.png) repeat scroll 0 0;
+}
+#layout .tabs-outer {
+overflow: visible;
+}
+.tabs-cap-top, .tabs-cap-bottom {
+position: absolute;
+width: 100%;
+border-top: 1px solid #999999;
+}
+.tabs-cap-bottom {
+bottom: 0;
+}
+.tabs-inner .widget li a {
+display: inline-block;
+margin: 0;
+padding: .6em 1.5em;
+font: normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #444444;
+border-top: 1px solid #999999;
+border-bottom: 1px solid #999999;
+border-left: 1px solid #999999;
+height: 16px;
+line-height: 16px;
+}
+.tabs-inner .widget li:last-child a {
+border-right: 1px solid #999999;
+}
+.tabs-inner .widget li.selected a, .tabs-inner .widget li a:hover {
+background: #666666 url(https://resources.blogblog.com/blogblog/data/1kt/awesomeinc/tabs_gradient_light.png) repeat-x scroll 0 -100px;
+color: #ffffff;
+}
+/* Headings
+----------------------------------------------- */
+h2 {
+font: normal bold 14px Ubuntu;
+color: #444444;
+}
+/* Widgets
+----------------------------------------------- */
+.main-inner .section {
+margin: 0 27px;
+padding: 0;
+}
+.main-inner .column-left-outer,
+.main-inner .column-right-outer {
+margin-top: 0;
+}
+#layout .main-inner .column-left-outer,
+#layout .main-inner .column-right-outer {
+margin-top: 0;
+}
+.main-inner .column-left-inner,
+.main-inner .column-right-inner {
+background: transparent none repeat 0 0;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+}
+#layout .main-inner .column-left-inner,
+#layout .main-inner .column-right-inner {
+margin-top: 0;
+}
+.sidebar .widget {
+font: normal normal 14px 'Trebuchet MS', Trebuchet, sans-serif;
+color: #444444;
+}
+.sidebar .widget a:link {
+color: #3778cd;
+}
+.sidebar .widget a:visited {
+color: #4d469c;
+}
+.sidebar .widget a:hover {
+color: #3778cd;
+}
+.sidebar .widget h2 {
+text-shadow: 0 0 -1px #000000;
+}
+.main-inner .widget {
+background-color: #ffffff;
+border: 1px solid #eeeeee;
+padding: 0 15px 15px;
+margin: 20px -16px;
+-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+}
+.main-inner .widget h2 {
+margin: 0 -15px;
+padding: .6em 15px .5em;
+border-bottom: 1px solid transparent;
+}
+.footer-inner .widget h2 {
+padding: 0 0 .4em;
+border-bottom: 1px solid transparent;
+}
+.main-inner .widget h2 + div, .footer-inner .widget h2 + div {
+border-top: 1px solid #eeeeee;
+padding-top: 8px;
+}
+.main-inner .widget .widget-content {
+margin: 0 -15px;
+padding: 7px 15px 0;
+}
+.main-inner .widget ul, .main-inner .widget #ArchiveList ul.flat {
+margin: -8px -15px 0;
+padding: 0;
+list-style: none;
+}
+.main-inner .widget #ArchiveList {
+margin: -8px 0 0;
+}
+.main-inner .widget ul li, .main-inner .widget #ArchiveList ul.flat li {
+padding: .5em 15px;
+text-indent: 0;
+color: #666666;
+border-top: 1px solid #eeeeee;
+border-bottom: 1px solid transparent;
+}
+.main-inner .widget #ArchiveList ul li {
+padding-top: .25em;
+padding-bottom: .25em;
+}
+.main-inner .widget ul li:first-child, .main-inner .widget #ArchiveList ul.flat li:first-child {
+border-top: none;
+}
+.main-inner .widget ul li:last-child, .main-inner .widget #ArchiveList ul.flat li:last-child {
+border-bottom: none;
+}
+.post-body {
+position: relative;
+}
+.main-inner .widget .post-body ul {
+padding: 0 2.5em;
+margin: .5em 0;
+list-style: disc;
+}
+.main-inner .widget .post-body ul li {
+padding: 0.25em 0;
+margin-bottom: .25em;
+color: #444444;
+border: none;
+}
+.footer-inner .widget ul {
+padding: 0;
+list-style: none;
+}
+.widget .zippy {
+color: #666666;
+}
+/* Posts
+----------------------------------------------- */
+body .main-inner .Blog {
+padding: 0;
+margin-bottom: 1em;
+background-color: transparent;
+border: none;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+.main-inner .section:last-child .Blog:last-child {
+padding: 0;
+margin-bottom: 1em;
+}
+.main-inner .widget h2.date-header {
+margin: 0 -15px 1px;
+padding: 0 0 0 0;
+font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #444444;
+background: transparent none no-repeat scroll top left;
+border-top: 0 solid #eeeeee;
+border-bottom: 1px solid transparent;
+-moz-border-radius-topleft: 0;
+-moz-border-radius-topright: 0;
+-webkit-border-top-left-radius: 0;
+-webkit-border-top-right-radius: 0;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+position: static;
+bottom: 100%;
+right: 15px;
+text-shadow: 0 0 -1px #000000;
+}
+.main-inner .widget h2.date-header span {
+font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+display: block;
+padding: .5em 15px;
+border-left: 0 solid #eeeeee;
+border-right: 0 solid #eeeeee;
+}
+.date-outer {
+position: relative;
+margin: 30px 0 20px;
+padding: 0 15px;
+background-color: #ffffff;
+border: 1px solid #eeeeee;
+-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+}
+.date-outer:first-child {
+margin-top: 0;
+}
+.date-outer:last-child {
+margin-bottom: 20px;
+-moz-border-radius-bottomleft: 0;
+-moz-border-radius-bottomright: 0;
+-webkit-border-bottom-left-radius: 0;
+-webkit-border-bottom-right-radius: 0;
+-goog-ms-border-bottom-left-radius: 0;
+-goog-ms-border-bottom-right-radius: 0;
+border-bottom-left-radius: 0;
+border-bottom-right-radius: 0;
+}
+.date-posts {
+margin: 0 -15px;
+padding: 0 15px;
+clear: both;
+}
+.post-outer, .inline-ad {
+border-top: 1px solid #eeeeee;
+margin: 0 -15px;
+padding: 15px 15px;
+}
+.post-outer {
+padding-bottom: 10px;
+}
+.post-outer:first-child {
+padding-top: 0;
+border-top: none;
+}
+.post-outer:last-child, .inline-ad:last-child {
+border-bottom: none;
+}
+.post-body {
+position: relative;
+}
+.post-body img {
+padding: 8px;
+background: transparent;
+border: 1px solid transparent;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+border-radius: 0;
+}
+h3.post-title, h4 {
+font: normal bold 22px 'Trebuchet MS', Trebuchet, sans-serif;
+color: #444444;
+}
+h3.post-title a {
+font: normal bold 22px 'Trebuchet MS', Trebuchet, sans-serif;
+color: #444444;
+}
+h3.post-title a:hover {
+color: #3778cd;
+text-decoration: underline;
+}
+.post-header {
+margin: 0 0 1em;
+}
+.post-body {
+line-height: 1.4;
+}
+.post-outer h2 {
+color: #444444;
+}
+.post-footer {
+margin: 1.5em 0 0;
+}
+#blog-pager {
+padding: 15px;
+font-size: 120%;
+background-color: #ffffff;
+border: 1px solid #eeeeee;
+-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+-moz-border-radius-topleft: 0;
+-moz-border-radius-topright: 0;
+-webkit-border-top-left-radius: 0;
+-webkit-border-top-right-radius: 0;
+-goog-ms-border-top-left-radius: 0;
+-goog-ms-border-top-right-radius: 0;
+border-top-left-radius: 0;
+border-top-right-radius-topright: 0;
+margin-top: 1em;
+}
+.blog-feeds, .post-feeds {
+margin: 1em 0;
+text-align: center;
+color: #444444;
+}
+.blog-feeds a, .post-feeds a {
+color: #3778cd;
+}
+.blog-feeds a:visited, .post-feeds a:visited {
+color: #4d469c;
+}
+.blog-feeds a:hover, .post-feeds a:hover {
+color: #3778cd;
+}
+.post-outer .comments {
+margin-top: 2em;
+}
+/* Comments
+----------------------------------------------- */
+.comments .comments-content .icon.blog-author {
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv7yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
+}
+.comments .comments-content .loadmore a {
+border-top: 1px solid #999999;
+border-bottom: 1px solid #999999;
+}
+.comments .continue {
+border-top: 2px solid #999999;
+}
+/* Footer
+----------------------------------------------- */
+.footer-outer {
+margin: -20px 0 -1px;
+padding: 20px 0 0;
+color: #444444;
+overflow: hidden;
+}
+.footer-fauxborder-left {
+border-top: 1px solid #eeeeee;
+background: #ffffff none repeat scroll 0 0;
+-moz-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+margin: 0 -20px;
+}
+/* Mobile
+----------------------------------------------- */
+body.mobile {
+background-size: auto;
+}
+.mobile .body-fauxcolumn-outer {
+background: transparent none repeat scroll top left;
+}
+*+html body.mobile .main-inner .column-center-inner {
+margin-top: 0;
+}
+.mobile .main-inner .widget {
+padding: 0 0 15px;
+}
+.mobile .main-inner .widget h2 + div,
+.mobile .footer-inner .widget h2 + div {
+border-top: none;
+padding-top: 0;
+}
+.mobile .footer-inner .widget h2 {
+padding: 0.5em 0;
+border-bottom: none;
+}
+.mobile .main-inner .widget .widget-content {
+margin: 0;
+padding: 7px 0 0;
+}
+.mobile .main-inner .widget ul,
+.mobile .main-inner .widget #ArchiveList ul.flat {
+margin: 0 -15px 0;
+}
+.mobile .main-inner .widget h2.date-header {
+right: 0;
+}
+.mobile .date-header span {
+padding: 0.4em 0;
+}
+.mobile .date-outer:first-child {
+margin-bottom: 0;
+border: 1px solid #eeeeee;
+-moz-border-radius-topleft: 0;
+-moz-border-radius-topright: 0;
+-webkit-border-top-left-radius: 0;
+-webkit-border-top-right-radius: 0;
+-goog-ms-border-top-left-radius: 0;
+-goog-ms-border-top-right-radius: 0;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+}
+.mobile .date-outer {
+border-color: #eeeeee;
+border-width: 0 1px 1px;
+}
+.mobile .date-outer:last-child {
+margin-bottom: 0;
+}
+.mobile .main-inner {
+padding: 0;
+}
+.mobile .header-inner .section {
+margin: 0;
+}
+.mobile .post-outer, .mobile .inline-ad {
+padding: 5px 0;
+}
+.mobile .tabs-inner .section {
+margin: 0 10px;
+}
+.mobile .main-inner .widget h2 {
+margin: 0;
+padding: 0;
+}
+.mobile .main-inner .widget h2.date-header span {
+padding: 0;
+}
+.mobile .main-inner .widget .widget-content {
+margin: 0;
+padding: 7px 0 0;
+}
+.mobile #blog-pager {
+border: 1px solid transparent;
+background: #ffffff none repeat scroll 0 0;
+}
+.mobile .main-inner .column-left-inner,
+.mobile .main-inner .column-right-inner {
+background: transparent none repeat 0 0;
+-moz-box-shadow: none;
+-webkit-box-shadow: none;
+-goog-ms-box-shadow: none;
+box-shadow: none;
+}
+.mobile .date-posts {
+margin: 0;
+padding: 0;
+}
+.mobile .footer-fauxborder-left {
+margin: 0;
+border-top: inherit;
+}
+.mobile .main-inner .section:last-child .Blog:last-child {
+margin-bottom: 0;
+}
+.mobile-index-contents {
+color: #444444;
+}
+.mobile .mobile-link-button {
+background: #3778cd url(https://resources.blogblog.com/blogblog/data/1kt/awesomeinc/tabs_gradient_light.png) repeat scroll 0 0;
+}
+.mobile-link-button a:link, .mobile-link-button a:visited {
+color: #ffffff;
+}
+.mobile .tabs-inner .PageList .widget-content {
+background: transparent;
+border-top: 1px solid;
+border-color: #999999;
+color: #444444;
+}
+.mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
+border-left: 1px solid #999999;
+}
+#blog-pager {
+-moz-box-shadow: 0 0 40px rgba(0, 0, 0, .15);
+-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+-goog-ms-box-shadow: 0 0 10px #333333;
+box-shadow: 0 0 40px rgba(0, 0, 0, 0);
+background: none;
+}
+.status-msg-wrap {
+width: 100%;
+font-size: 150%;
+color: #336600;
+font-style: oblique;
+}
+.status-msg-wrap a {
+display:none;
+}
+.status-msg-body {
+text-align: left;
+}
+.status-msg-border {
+border: 0px;
+}
+.status-msg-bg {
+background: none;
+}
+.date-outer {
+margin: 0px 0px 0px 0px;
+}
+.post-outer {
+padding: 0px 15px 15px 15px;
+}
+--></style>
+<style id="template-skin-1" type="text/css"><!--
+body {
+min-width: 1200px;
+}
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+min-width: 1200px;
+max-width: 1200px;
+_width: 1200px;
+}
+.main-inner .columns {
+padding-left: 0px;
+padding-right: 300px;
+}
+.main-inner .fauxcolumn-center-outer {
+left: 0px;
+right: 300px;
+/* IE6 does not respect left and right together */
+_width: expression(this.parentNode.offsetWidth -
+parseInt("0px") -
+parseInt("300px") + 'px');
+}
+.main-inner .fauxcolumn-left-outer {
+width: 0px;
+}
+.main-inner .fauxcolumn-right-outer {
+width: 300px;
+}
+.main-inner .column-left-outer {
+width: 0px;
+right: 100%;
+margin-left: -0px;
+}
+.main-inner .column-right-outer {
+width: 300px;
+margin-right: -300px;
+}
+#layout {
+min-width: 0;
+}
+#layout .content-outer {
+min-width: 0;
+width: 800px;
+}
+#layout .region-inner {
+min-width: 0;
+width: auto;
+}
+body#layout div.add_widget {
+padding: 8px;
+}
+body#layout div.add_widget a {
+margin-left: 32px;
+}
+--></style>
+<script async="" src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/analytics.js.download"></script><script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-23042607-1', 'auto', 'blogger');
+        ga('blogger.send', 'pageview');
+      </script>
+<link href="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shCore.css" rel="stylesheet" type="text/css">
+<link href="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shThemeDefault.css" rel="stylesheet" type="text/css">
+<link href="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/xcode.min.css" rel="stylesheet" type="text/css">
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/highlight.min.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/swift.min.js.download" type="text/javascript"></script>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((block) => {
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shCore.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushCpp.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushCSharp.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushCss.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushJava.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushJScript.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushPhp.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushPython.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushRuby.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushSql.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushVb.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushXml.js.download" type="text/javascript"></script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/shBrushPlain.js.download" type="text/javascript"></script>
+<script language="javascript"> 
+;(function()
+{
+	// CommonJS
+	typeof(require) != 'undefined' ? SyntaxHighlighter = require('shCore').SyntaxHighlighter : null;
+
+	function Brush()
+	{
+		// Copyright 2006 Shin, YoungJin
+		// Copyright 2011 Scott Densmore
+	
+		var datatypes =	'ATOM BOOL BOOLEAN BYTE CHAR COLORREF DWORD DWORDLONG DWORD_PTR ' +
+						'DWORD32 DWORD64 FLOAT HACCEL HALF_PTR HANDLE HBITMAP HBRUSH ' +
+						'HCOLORSPACE HCONV HCONVLIST HCURSOR HDC HDDEDATA HDESK HDROP HDWP ' +
+						'HENHMETAFILE HFILE HFONT HGDIOBJ HGLOBAL HHOOK HICON HINSTANCE HKEY ' +
+						'HKL HLOCAL HMENU HMETAFILE HMODULE HMONITOR HPALETTE HPEN HRESULT ' +
+						'HRGN HRSRC HSZ HWINSTA HWND INT INT_PTR INT32 INT64 LANGID LCID LCTYPE ' +
+						'LGRPID LONG LONGLONG LONG_PTR LONG32 LONG64 LPARAM LPBOOL LPBYTE LPCOLORREF ' +
+						'LPCSTR LPCTSTR LPCVOID LPCWSTR LPDWORD LPHANDLE LPINT LPLONG LPSTR LPTSTR ' +
+						'LPVOID LPWORD LPWSTR LRESULT PBOOL PBOOLEAN PBYTE PCHAR PCSTR PCTSTR PCWSTR ' +
+						'PDWORDLONG PDWORD_PTR PDWORD32 PDWORD64 PFLOAT PHALF_PTR PHANDLE PHKEY PINT ' +
+						'PINT_PTR PINT32 PINT64 PLCID PLONG PLONGLONG PLONG_PTR PLONG32 PLONG64 POINTER_32 ' +
+						'POINTER_64 PSHORT PSIZE_T PSSIZE_T PSTR PTBYTE PTCHAR PTSTR PUCHAR PUHALF_PTR ' +
+						'PUINT PUINT_PTR PUINT32 PUINT64 PULONG PULONGLONG PULONG_PTR PULONG32 PULONG64 ' +
+						'PUSHORT PVOID PWCHAR PWORD PWSTR SC_HANDLE SC_LOCK SERVICE_STATUS_HANDLE SHORT ' +
+						'SIZE_T SSIZE_T TBYTE TCHAR UCHAR UHALF_PTR UINT UINT_PTR UINT32 UINT64 ULONG ' +
+						'ULONGLONG ULONG_PTR ULONG32 ULONG64 USHORT USN VOID WCHAR WORD WPARAM WPARAM WPARAM ' +
+						'char bool short int __int32 __int64 __int8 __int16 long float double __wchar_t ' +
+						'clock_t _complex _dev_t _diskfree_t div_t ldiv_t _exception _EXCEPTION_POINTERS ' +
+						'FILE _finddata_t _finddatai64_t _wfinddata_t _wfinddatai64_t __finddata64_t ' +
+						'__wfinddata64_t _FPIEEE_RECORD fpos_t _HEAPINFO _HFILE lconv intptr_t id ' +
+						'jmp_buf mbstate_t _off_t _onexit_t _PNH ptrdiff_t _purecall_handler ' +
+						'sig_atomic_t size_t _stat __stat64 _stati64 terminate_function ' +
+						'time_t __time64_t _timeb __timeb64 tm uintptr_t _utimbuf ' +
+						'va_list wchar_t wctrans_t wctype_t wint_t signed';
+
+		var keywords =	'break case catch class copy const __finally __exception __try ' +
+						'const_cast continue private public protected __declspec ' +
+						'default delete deprecated dllexport dllimport do dynamic_cast ' +
+						'else enum explicit extern if for friend getter goto inline ' +
+						'mutable naked namespace new nil NO noinline nonatomic noreturn nothrow NULL ' +
+						'readonly readwrite register reinterpret_cast retain return SEL selectany self ' +
+						'setter sizeof static static_cast struct super switch template this ' +
+						'thread throw true false try typedef typeid typename union ' +
+						'using uuid virtual void volatile whcar_t while YES';
+					
+		var functions =	'assert isalnum isalpha iscntrl isdigit isgraph islower isprint' +
+						'ispunct isspace isupper isxdigit tolower toupper errno localeconv ' +
+						'setlocale acos asin atan atan2 ceil cos cosh exp fabs floor fmod ' +
+						'frexp ldexp log log10 modf pow sin sinh sqrt tan tanh jmp_buf ' +
+						'longjmp setjmp raise signal sig_atomic_t va_arg va_end va_start ' +
+						'clearerr fclose feof ferror fflush fgetc fgetpos fgets fopen ' +
+						'fprintf fputc fputs fread freopen fscanf fseek fsetpos ftell ' +
+						'fwrite getc getchar gets perror printf putc putchar puts remove ' +
+						'rename rewind scanf setbuf setvbuf sprintf sscanf tmpfile tmpnam ' +
+						'ungetc vfprintf vprintf vsprintf abort abs atexit atof atoi atol ' +
+						'bsearch calloc div exit free getenv labs ldiv malloc mblen mbstowcs ' +
+						'mbtowc qsort rand realloc srand strtod strtol strtoul system ' +
+						'wcstombs wctomb memchr memcmp memcpy memmove memset strcat strchr ' +
+						'strcmp strcoll strcpy strcspn strerror strlen strncat strncmp ' +
+						'strncpy strpbrk strrchr strspn strstr strtok strxfrm asctime ' +
+						'clock ctime difftime gmtime localtime mktime strftime time';
+
+		this.regexList = [
+			{ regex: SyntaxHighlighter.regexLib.singleLineCComments,	css: 'comments' },			// one line comments
+			{ regex: SyntaxHighlighter.regexLib.multiLineCComments,		css: 'comments' },			// multiline comments
+			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },			// strings
+			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },			// strings
+			{ regex: /^ *#.*/gm,										css: 'preprocessor' },
+			{ regex: /^#!.*$/gm,										css: 'preprocessor' },
+			{ regex: new RegExp(this.getKeywords(datatypes), 'gm'),		css: 'keyword bold' },
+			{ regex: new RegExp(this.getKeywords(functions), 'gm'),		css: 'functions bold' },
+			{ regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword bold' },
+			{ regex: new RegExp('\\bNS\\w+\\b', 'gm'),					css: 'keyword bold' },
+			{ regex: new RegExp('\\bUI\\w+\\b', 'gm'),					css: 'keyword bold' },
+			{ regex: new RegExp('\\bIB\\w+\\b', 'gm'),					css: 'keyword bold' },
+			{ regex: new RegExp('@\\w+\\b', 'gm'),						css: 'keyword bold' },
+			];
+	};
+
+	Brush.prototype	= new SyntaxHighlighter.Highlighter();
+	Brush.aliases	= ['obj-c', 'objc', 'oc'];
+
+	SyntaxHighlighter.brushes.Objc = Brush;
+
+	// CommonJS
+	typeof(exports) != 'undefined' ? exports.Brush = Brush : null;
+})();
+
+;(function()
+{
+  // CommonJS
+  SyntaxHighlighter = SyntaxHighlighter || (typeof require !== 'undefined'? require('shCore').SyntaxHighlighter : null);
+
+  function Brush()
+  {
+    var bifs =  '%abs %addr %alloc %bit(and|not|or|xor) %char %check(r)? %date %days '+
+                '%dec(h|pos)? %diff %div %edit(c|flt|w) %elem %eof %equal %error %fields %float '+
+                '%found %graph %handler %hours %int %kds %len %lookup(lt|ge|gt|le)? %minutes '+
+                '%months %mseconds %nullind %occur %open %paddr %parms %realloc %rem %replace '+
+                '%scan %seconds %shtdn %size %sqrt %status %str %subarr %subdt %subst %this '+
+                '%time(stamp)? %tlookup(lt|ge|gt|le)? %trim(l|r)? %ucs2 %uns %unsh %xfoot '+
+                '%xlate %xml %years';
+
+    var opcodes = 'acq add(dur)? alloc and(gt|lt|eq|ne|ge|le)? begsr bit(off|on) '+
+                  'cab(gt|lt|eq|ne|ge|le) call(b|p)? cas(gt|lt|eq|ne|ge|le) cat chain check(r)? '+
+                  'clear close commit comp dealloc define delete div do dou(gt|lt|eq|ne|ge|le)? '+
+                  'dow(gt|lt|eq|ne|ge|le)? dsply dump else(if)? end(cs|do|for|if|mon|sl|sr)? '+
+                  'eval(r|-corr)? except exfmt exsr extrct feod for force free goto '+
+                  'if(gt|lt|eq|ne|ge|le)? in iter kfld klist leave(sr)? lookup m(h|l){2}zo monitor '+
+                  'move(a|l)? mult mvr next occur on-error open or(gt|lt|eq|ne|ge|le)? other out '+
+                  'parm plist post read(c|e|p|pe)? realloc rel reset return rolbk scan select '+
+                  'set(gt|ll|off|on) shtdn sorta sqrt sub(dur|st)? tag test(b|n|z)? time unlock '+
+                  'update when(gt|lt|eq|ne|ge|le)? write xfoot xlate xml-(into|sax) z-(add|sub)';
+
+    var ckeywords = 'actgrp altseq alwnull aut bnddir ccsid copy(nest|right) cursym '+
+                    'cvtopt dat(edit|fmt) debug dec(edit|prec) dft(actgrp|name) enbprfcol expropts '+
+                    'extbinint fixnbr fltdiv formsalign ftrans genlvl indent intprec langid (no)?main '+
+                    'openopt optimize option pgminfo prfdta srtseq text thread timfmt truncnbr usrprf';
+
+    var fkeywords = 'block commit datfmt devid ext(desc|file|ind|mbr) form(len|ofl) ignore '+
+                    'include indds infsr keyloc likefile maxdev oflind pass pgmname plist prefix '+
+                    'prtctl qualified rafdata recno rename saveds saveind sfile sln static template '+
+                    'timfmt usropn';
+
+    var dkeywords = 'align alt(seq)? ascend based ccsid class const ctdata datfmt '+
+                    'descend dim dtaara export ext(fld|fmt|name|pgm|proc) fromfile import inz '+
+                    'like(ds|file|rec)? noopt occurs opdesc options overlay packeven perrcd prefix '+
+                    'procptr qualified static template timfmt tofile value varying';
+
+    var pkeywords = 'export serialize';
+
+    var figuratives = '[*]{2}ctdata [*]blanks? [*]zeros? [*](hi|lo)val [*]null [*]on [*]off '+
+                      '[*]all(x|g)? [*]start [*]end';
+
+    var directives = '[/](end-)?(free|exec) [/](copy|eject|else|eof|include|space|title) '+
+                     '[/](un)?define [/](else|end)?if';
+
+    var indicators = '[*]?in([01-99]|lr|(h|l)[1-9])';
+
+    // Comments starting at column 7 for fixed format.
+    var fixedcomments = '^.{6}[*].*$';
+
+    this.getFunctions = function(list)
+    {
+      return "(?:" + list.replace(/\s+/g, "|") + ")\\b";
+    };
+
+  this.regexList = [
+    { regex: SyntaxHighlighter.regexLib.singleLineCComments,    css: 'comments' },
+    { regex: new RegExp(fixedcomments, 'gm'),                   css: 'comments' },
+    { regex: new RegExp(this.getFunctions(directives), 'gmi'),  css: 'color1' },
+    { regex: new RegExp(this.getFunctions(bifs), 'gmi'),        css: 'functions' },
+    { regex: new RegExp(this.getKeywords(opcodes), 'gmi'),      css: 'keyword' },
+    { regex: new RegExp(this.getFunctions(indicators), 'gmi'),  css: 'color3' },
+    { regex: new RegExp(this.getFunctions(figuratives), 'gmi'), css: 'color3' },
+    { regex: new RegExp(this.getKeywords(ckeywords), 'gmi'),    css: 'color3' },
+    { regex: new RegExp(this.getKeywords(fkeywords), 'gmi'),    css: 'color3' },
+    { regex: new RegExp(this.getKeywords(dkeywords), 'gmi'),    css: 'color3' },
+    { regex: new RegExp(this.getKeywords(pkeywords), 'gmi'),    css: 'color3' }
+    ];
+
+  };
+
+  Brush.prototype  = new SyntaxHighlighter.Highlighter();
+  Brush.aliases  = ['rpgle','rpg4'];
+
+  SyntaxHighlighter.brushes.Cside = Brush;
+
+  // CommonJS
+  typeof(exports) != 'undefined' ? exports.Brush = Brush : null;
+})();
+
+
+SyntaxHighlighter.config.bloggerMode = true;
+SyntaxHighlighter.config.clipboardSwf = 'https://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
+SyntaxHighlighter.all();
+</script>
+<script async="async" src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/f.txt"></script>
+<script>
+var DISPLAY_ADS = false;
+if(DISPLAY_ADS) {
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8385820531382249",
+          enable_page_level_ads: true
+     });
+}
+</script>
+<link href="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/authorization.css" media="all" onload="if(media!=&#39;all&#39;)media=&#39;all&#39;" rel="stylesheet"><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=5475461039314973243&amp;zx=25d3daa3-8bd2-4392-bf37-e894b50d9d78' rel='stylesheet'/></noscript>
+<meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
+<meta name="google-adsense-platform-domain" content="blogspot.com">
+
+<!-- data-ad-client=ca-pub-8385820531382249 -->
+
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/m=el_main_css"><script type="text/javascript" charset="UTF-8" src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/m=el_main"></script></head>
+<body class=" variant-light" style="position: relative; min-height: 100%; top: 0px;">
+<div class="navbar no-items section" id="navbar" name="Navbar">
+</div>
+<div class="body-fauxcolumns">
+<div class="fauxcolumn-outer body-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="content-fauxcolumns">
+<div class="fauxcolumn-outer content-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content-outer">
+<div class="content-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left content-fauxborder-left">
+<div class="fauxborder-right content-fauxborder-right"></div>
+<div class="content-inner">
+<header>
+<div class="header-outer">
+<div class="header-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left header-fauxborder-left">
+<div class="fauxborder-right header-fauxborder-right"></div>
+<div class="region-inner header-inner">
+<div class="header section" id="header" name="Header"><div class="widget Header" data-version="1" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="https://www.mysamplecode.com/">
+Programmers Sample Guide
+</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span><i>All one can think and do in a short time is to think what one already knows and to do as one has always done!</i></span></p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="header-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</header>
+<div class="tabs-outer">
+<div class="tabs-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left tabs-fauxborder-left">
+<div class="fauxborder-right tabs-fauxborder-right"></div>
+<div class="region-inner tabs-inner">
+<div class="tabs no-items section" id="crosscol" name="Cross-Column"></div>
+<div class="tabs no-items section" id="crosscol-overflow" name="Cross-Column 2"></div>
+</div>
+</div>
+<div class="tabs-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="main-outer">
+<div class="main-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left main-fauxborder-left">
+<div class="fauxborder-right main-fauxborder-right"></div>
+<div class="region-inner main-inner">
+<div class="columns fauxcolumns">
+<div class="fauxcolumn-outer fauxcolumn-center-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-left-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-right-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<!-- corrects IE6 width calculation -->
+<div class="columns-inner">
+<div class="column-center-outer">
+<div class="column-center-inner">
+<div class="main section" id="main" name="Main"><div class="widget Blog" data-version="1" id="Blog1">
+<div class="blog-posts hfeed">
+
+          <div class="date-outer">
+        
+
+          <div class="date-posts">
+        
+<div class="post-outer">
+<div class="post hentry uncustomized-post-template" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<meta content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6mrU8-UiY5CMhncC9M52H2b-bTc-4JLnRasz5CLlOCx_cfVlF61d4IWvRGXWOI__CtuK9qVfW5BrZnD2Cjntox0O5wT9Hj1d4obmMTEI446JeQgsbXL0iEKWHTrxOsCUCANHfmjSOLkA/s1600/Generate+HTML+table+dynamically+using+JavaScript.jpg" itemprop="image_url">
+<meta content="5475461039314973243" itemprop="blogId">
+<meta content="3754804830908697637" itemprop="postId">
+<a name="3754804830908697637"></a>
+<h3 class="post-title entry-title" itemprop="name">
+Dynamically generate HTML table using JavaScript - document.createElement() method
+</h3>
+<div class="post-header">
+<div class="post-header-line-1"></div>
+</div>
+<div class="post-body entry-content" id="post-body-3754804830908697637" itemprop="description articleBody">
+<b>This tutorial covers the following topics</b>
+<br>
+<ul>
+<li>Create a Row dynamically inside the table from form data</li>
+<li>Add a Delete button to the added table Row</li>
+<li>Ability to delete the dynamically generated table Row </li>
+</ul>
+<table><tbody>
+<tr><td><br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/Generate HTML table dynamically using JavaScript.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img alt="Generate HTML table dynamically using JavaScript" border="0" src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/Generate HTML table dynamically using JavaScript.jpg"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/Generate HTML table dynamically using JavaScript(1).jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img alt="Generate HTML table dynamically using JavaScript" border="0" src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/Generate HTML table dynamically using JavaScript(1).jpg"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/Generate HTML table dynamically using JavaScript(2).jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img alt="Generate HTML table dynamically using JavaScript" border="0" src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/Generate HTML table dynamically using JavaScript(2).jpg"></a></div>
+</td></tr>
+</tbody></table>
+We have created a simple HTML form with name and age input. When the user clicks on the Add button we add a row to the Table element dynamically. You can also create a table right from scratch using createElement method.<br>
+<br>
+<h4>
+
+
+
+
+Source for the HTML page - index.html</h4>
+<div><div id="highlighter_440369" class="syntaxhighlighter  xml"><div class="toolbar"><span><a href="https://www.mysamplecode.com/2012/04/generate-html-table-using-javascript.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xml plain">&lt;!DOCTYPE html&gt;</code></div><div class="line number2 index1 alt1"><code class="xml plain">&lt;</code><code class="xml keyword">html</code><code class="xml plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">head</code><code class="xml plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">title</code><code class="xml plain">&gt;HTML dynamic table using JavaScript&lt;/</code><code class="xml keyword">title</code><code class="xml plain">&gt;</code></div><div class="line number5 index4 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">script</code> <code class="xml color1">type</code><code class="xml plain">=</code><code class="xml string">"text/javascript"</code> <code class="xml color1">src</code><code class="xml plain">=</code><code class="xml string">"app.js"</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">script</code><code class="xml plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="xml plain">&lt;/</code><code class="xml keyword">head</code><code class="xml plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">body</code> <code class="xml color1">onload</code><code class="xml plain">=</code><code class="xml string">"load()"</code><code class="xml plain">&gt;</code></div><div class="line number8 index7 alt1"><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">id</code><code class="xml plain">=</code><code class="xml string">"myform"</code><code class="xml plain">&gt;</code></div><div class="line number9 index8 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">b</code><code class="xml plain">&gt;Simple form with name and age ...&lt;/</code><code class="xml keyword">b</code><code class="xml plain">&gt;</code></div><div class="line number10 index9 alt1"><code class="xml plain">&lt;</code><code class="xml keyword">table</code><code class="xml plain">&gt;</code></div><div class="line number11 index10 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code></div><div class="line number12 index11 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;Name:&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number13 index12 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;&lt;</code><code class="xml keyword">input</code> <code class="xml color1">type</code><code class="xml plain">=</code><code class="xml string">"text"</code> <code class="xml color1">id</code><code class="xml plain">=</code><code class="xml string">"name"</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number14 index13 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code></div><div class="line number15 index14 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code></div><div class="line number16 index15 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;Age:&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number17 index16 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;&lt;</code><code class="xml keyword">input</code> <code class="xml color1">type</code><code class="xml plain">=</code><code class="xml string">"text"</code> <code class="xml color1">id</code><code class="xml plain">=</code><code class="xml string">"age"</code><code class="xml plain">&gt;</code></div><div class="line number18 index17 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">input</code> <code class="xml color1">type</code><code class="xml plain">=</code><code class="xml string">"button"</code> <code class="xml color1">id</code><code class="xml plain">=</code><code class="xml string">"add"</code> <code class="xml color1">value</code><code class="xml plain">=</code><code class="xml string">"Add"</code> <code class="xml color1">onclick</code><code class="xml plain">=</code><code class="xml string">"Javascript:addRow()"</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number19 index18 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code></div><div class="line number20 index19 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code></div><div class="line number21 index20 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;&amp;nbsp;&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number22 index21 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;&amp;nbsp;&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number23 index22 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code></div><div class="line number24 index23 alt1"><code class="xml plain">&lt;/</code><code class="xml keyword">table</code><code class="xml plain">&gt;</code></div><div class="line number25 index24 alt2"><code class="xml plain">&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div><div class="line number26 index25 alt1"><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">id</code><code class="xml plain">=</code><code class="xml string">"mydata"</code><code class="xml plain">&gt;</code></div><div class="line number27 index26 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">b</code><code class="xml plain">&gt;Current data in the system ...&lt;/</code><code class="xml keyword">b</code><code class="xml plain">&gt;</code></div><div class="line number28 index27 alt1"><code class="xml plain">&lt;</code><code class="xml keyword">table</code> <code class="xml color1">id</code><code class="xml plain">=</code><code class="xml string">"myTableData"</code>&nbsp; <code class="xml color1">border</code><code class="xml plain">=</code><code class="xml string">"1"</code> <code class="xml color1">cellpadding</code><code class="xml plain">=</code><code class="xml string">"2"</code><code class="xml plain">&gt;</code></div><div class="line number29 index28 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code></div><div class="line number30 index29 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;&amp;nbsp;&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number31 index30 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;&lt;</code><code class="xml keyword">b</code><code class="xml plain">&gt;Name&lt;/</code><code class="xml keyword">b</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number32 index31 alt1"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code><code class="xml plain">&gt;&lt;</code><code class="xml keyword">b</code><code class="xml plain">&gt;Age&lt;/</code><code class="xml keyword">b</code><code class="xml plain">&gt;&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code></div><div class="line number33 index32 alt2"><code class="xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code></div><div class="line number34 index33 alt1"><code class="xml plain">&lt;/</code><code class="xml keyword">table</code><code class="xml plain">&gt;</code></div><div class="line number35 index34 alt2"><code class="xml plain">&amp;nbsp;</code></div><div class="line number36 index35 alt1">&nbsp;</div><div class="line number37 index36 alt2"><code class="xml plain">&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div><div class="line number38 index37 alt1"><code class="xml plain">&lt;</code><code class="xml keyword">div</code> <code class="xml color1">id</code><code class="xml plain">=</code><code class="xml string">"myDynamicTable"</code><code class="xml plain">&gt;</code></div><div class="line number39 index38 alt2"><code class="xml plain">&lt;</code><code class="xml keyword">input</code> <code class="xml color1">type</code><code class="xml plain">=</code><code class="xml string">"button"</code> <code class="xml color1">id</code><code class="xml plain">=</code><code class="xml string">"create"</code> <code class="xml color1">value</code><code class="xml plain">=</code><code class="xml string">"Click here"</code> <code class="xml color1">onclick</code><code class="xml plain">=</code><code class="xml string">"Javascript:addTable()"</code><code class="xml plain">&gt;</code></div><div class="line number40 index39 alt1"><code class="xml plain">to create a Table and add some data using JavaScript</code></div><div class="line number41 index40 alt2"><code class="xml plain">&lt;/</code><code class="xml keyword">div</code><code class="xml plain">&gt;</code></div><div class="line number42 index41 alt1"><code class="xml plain">&lt;/</code><code class="xml keyword">body</code><code class="xml plain">&gt;</code></div><div class="line number43 index42 alt2"><code class="xml plain">&lt;/</code><code class="xml keyword">html</code><code class="xml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+<br>
+<h4>
+
+
+
+
+Source for the JavaScript file - app.js</h4>
+<div><div id="highlighter_476949" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.mysamplecode.com/2012/04/generate-html-table-using-javascript.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js keyword">function</code> <code class="js plain">addRow() {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">myName = document.getElementById(</code><code class="js string">"name"</code><code class="js plain">);</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">age = document.getElementById(</code><code class="js string">"age"</code><code class="js plain">);</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">table = document.getElementById(</code><code class="js string">"myTableData"</code><code class="js plain">);</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">rowCount = table.rows.length;</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">row = table.insertRow(rowCount);</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">row.insertCell(0).innerHTML= </code><code class="js string">'&lt;input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)"&gt;'</code><code class="js plain">;</code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">row.insertCell(1).innerHTML= myName.value;</code></div><div class="line number12 index11 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">row.insertCell(2).innerHTML= age.value;</code></div><div class="line number13 index12 alt2">&nbsp;</div><div class="line number14 index13 alt1"><code class="js plain">}</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="js keyword">function</code> <code class="js plain">deleteRow(obj) {</code></div><div class="line number17 index16 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number18 index17 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">index = obj.parentNode.parentNode.rowIndex;</code></div><div class="line number19 index18 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">table = document.getElementById(</code><code class="js string">"myTableData"</code><code class="js plain">);</code></div><div class="line number20 index19 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">table.deleteRow(index);</code></div><div class="line number21 index20 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number22 index21 alt1"><code class="js plain">}</code></div><div class="line number23 index22 alt2">&nbsp;</div><div class="line number24 index23 alt1"><code class="js keyword">function</code> <code class="js plain">addTable() {</code></div><div class="line number25 index24 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number26 index25 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">myTableDiv = document.getElementById(</code><code class="js string">"myDynamicTable"</code><code class="js plain">);</code></div><div class="line number27 index26 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number28 index27 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">table = document.createElement(</code><code class="js string">'TABLE'</code><code class="js plain">);</code></div><div class="line number29 index28 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">table.border=</code><code class="js string">'1'</code><code class="js plain">;</code></div><div class="line number30 index29 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number31 index30 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">tableBody = document.createElement(</code><code class="js string">'TBODY'</code><code class="js plain">);</code></div><div class="line number32 index31 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">table.appendChild(tableBody);</code></div><div class="line number33 index32 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number34 index33 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">for</code> <code class="js plain">(</code><code class="js keyword">var</code> <code class="js plain">i=0; i&lt;3; i++){</code></div><div class="line number35 index34 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">tr = document.createElement(</code><code class="js string">'TR'</code><code class="js plain">);</code></div><div class="line number36 index35 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">tableBody.appendChild(tr);</code></div><div class="line number37 index36 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number38 index37 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">for</code> <code class="js plain">(</code><code class="js keyword">var</code> <code class="js plain">j=0; j&lt;4; j++){</code></div><div class="line number39 index38 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">td = document.createElement(</code><code class="js string">'TD'</code><code class="js plain">);</code></div><div class="line number40 index39 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">td.width=</code><code class="js string">'75'</code><code class="js plain">;</code></div><div class="line number41 index40 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">td.appendChild(document.createTextNode(</code><code class="js string">"Cell "</code> <code class="js plain">+ i + </code><code class="js string">","</code> <code class="js plain">+ j));</code></div><div class="line number42 index41 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">tr.appendChild(td);</code></div><div class="line number43 index42 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number44 index43 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}</code></div><div class="line number45 index44 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">myTableDiv.appendChild(table);</code></div><div class="line number46 index45 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number47 index46 alt2"><code class="js plain">}</code></div><div class="line number48 index47 alt1">&nbsp;</div><div class="line number49 index48 alt2"><code class="js keyword">function</code> <code class="js plain">load() {</code></div><div class="line number50 index49 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number51 index50 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">console.log(</code><code class="js string">"Page load finished"</code><code class="js plain">);</code></div><div class="line number52 index51 alt1">&nbsp;</div><div class="line number53 index52 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1">
+<span class="post-author vcard">
+</span>
+<span class="post-timestamp">
+</span>
+<span class="post-comment-link">
+</span>
+<span class="post-icons">
+</span>
+<div class="post-share-buttons goog-inline-block">
+</div>
+</div>
+<div class="post-footer-line post-footer-line-2">
+<span class="post-labels">
+Labels:
+<a href="https://www.mysamplecode.com/search/label/HTML" rel="tag">HTML</a>,
+<a href="https://www.mysamplecode.com/search/label/JavaScript" rel="tag">JavaScript</a>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3">
+<span class="post-location">
+</span>
+</div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>1 comment:</h4>
+<div id="Blog1_comments-block-wrapper">
+<dl class="" id="comments-block">
+<dt class="comment-author blogger-comment-icon" id="c4933731705821625704">
+<a name="c4933731705821625704"></a>
+<a href="https://www.blogger.com/profile/08365081819016430450" rel="nofollow">john</a>
+said...
+</dt>
+<dd class="comment-body" id="Blog1_cmt-4933731705821625704">
+<p>
+The addTable creates duplicates values I need to display 88 values and be able to click on one of them and see the value on the monitor
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="https://www.mysamplecode.com/2012/04/generate-html-table-using-javascript.html?showComment=1561421207284#c4933731705821625704" title="comment permalink">
+June 24, 2019 at 8:06 PM
+</a>
+<span class="item-control blog-admin pid-1590120075">
+<a class="comment-delete" href="https://www.blogger.com/delete-comment.g?blogID=5475461039314973243&amp;postID=4933731705821625704" title="Delete Comment">
+<img src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+</dl>
+</div>
+<p class="comment-footer">
+</p><div class="comment-form">
+<a name="comment-form"></a>
+<h4 id="comment-post-message">Post a Comment</h4>
+<p><b>NO JUNK, Please try to keep this clean and related to the topic at hand.</b><br>Comments are for users to ask questions, collaborate or improve on existing.</p>
+<a href="https://www.blogger.com/comment/frame/5475461039314973243?po=3754804830908697637&amp;hl=en&amp;blogspotRpcToken=9163610" id="comment-editor-src"></a>
+<iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" frameborder="0" height="66px" id="comment-editor" name="comment-editor" src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/5475461039314973243.html" width="100%" data-resized="true" style=""></iframe>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/1466990918-comment_from_post_iframe.js.download" type="text/javascript"></script>
+<script type="text/javascript">
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+<p></p>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="https://www.mysamplecode.com/2012/04/jdbc-mysql-communicationsexception-link.html" id="Blog1_blog-pager-newer-link" title="Newer Post">Newer Post</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="https://www.mysamplecode.com/2012/04/jquery-ajax-request-response-java.html" id="Blog1_blog-pager-older-link" title="Older Post">Older Post</a>
+</span>
+<a class="home-link" href="https://www.mysamplecode.com/">Home</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+</div>
+</div></div>
+</div>
+</div>
+<div class="column-left-outer">
+<div class="column-left-inner">
+<aside>
+</aside>
+</div>
+</div>
+<div class="column-right-outer">
+<div class="column-right-inner">
+<aside>
+<div class="sidebar section" id="sidebar-right-1"><div class="widget BlogSearch" data-version="1" id="BlogSearch1">
+<h2 class="title">Search This Site ...</h2>
+<div class="widget-content">
+<div id="BlogSearch1_form">
+<form action="https://www.mysamplecode.com/search" class="gsc-search-box" target="_top">
+<table cellpadding="0" cellspacing="0" class="gsc-search-box">
+<tbody>
+<tr>
+<td class="gsc-input">
+<input autocomplete="off" class="gsc-input" name="q" size="10" title="search" type="text" value="">
+</td>
+<td class="gsc-search-button">
+<input class="gsc-search-button" title="search" type="submit" value="Search">
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+</div>
+</div>
+<div class="clear"></div>
+</div><div class="widget Translate" data-version="1" id="Translate1">
+<h2 class="title">Happy to translate ...</h2>
+<div id="google_translate_element"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage"><select class="goog-te-combo" aria-label="Language Translate Widget"><option value="">Select Language</option><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="am">Amharic</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="as">Assamese</option><option value="ay">Aymara</option><option value="az">Azerbaijani</option><option value="bm">Bambara</option><option value="eu">Basque</option><option value="be">Belarusian</option><option value="bn">Bengali</option><option value="bho">Bhojpuri</option><option value="bs">Bosnian</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="ceb">Cebuano</option><option value="ny">Chichewa</option><option value="zh-CN">Chinese (Simplified)</option><option value="zh-TW">Chinese (Traditional)</option><option value="co">Corsican</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="dv">Dhivehi</option><option value="doi">Dogri</option><option value="nl">Dutch</option><option value="eo">Esperanto</option><option value="et">Estonian</option><option value="ee">Ewe</option><option value="tl">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="fy">Frisian</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="gn">Guarani</option><option value="gu">Gujarati</option><option value="ht">Haitian Creole</option><option value="ha">Hausa</option><option value="haw">Hawaiian</option><option value="iw">Hebrew</option><option value="hi">Hindi</option><option value="hmn">Hmong</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="ig">Igbo</option><option value="ilo">Ilocano</option><option value="id">Indonesian</option><option value="ga">Irish Gaelic</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="jw">Javanese</option><option value="kn">Kannada</option><option value="kk">Kazakh</option><option value="km">Khmer</option><option value="rw">Kinyarwanda</option><option value="gom">Konkani</option><option value="ko">Korean</option><option value="kri">Krio</option><option value="ku">Kurdish (Kurmanji)</option><option value="ckb">Kurdish (Sorani)</option><option value="ky">Kyrgyz</option><option value="lo">Lao</option><option value="la">Latin</option><option value="lv">Latvian</option><option value="ln">Lingala</option><option value="lt">Lithuanian</option><option value="lg">Luganda</option><option value="lb">Luxembourgish</option><option value="mk">Macedonian</option><option value="mai">Maithili</option><option value="mg">Malagasy</option><option value="ms">Malay</option><option value="ml">Malayalam</option><option value="mt">Maltese</option><option value="mi">Maori</option><option value="mr">Marathi</option><option value="mni-Mtei">Meiteilon (Manipuri)</option><option value="lus">Mizo</option><option value="mn">Mongolian</option><option value="my">Myanmar (Burmese)</option><option value="ne">Nepali</option><option value="no">Norwegian</option><option value="or">Odia (Oriya)</option><option value="om">Oromo</option><option value="ps">Pashto</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="pa">Punjabi</option><option value="qu">Quechua</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sm">Samoan</option><option value="sa">Sanskrit</option><option value="gd">Scots Gaelic</option><option value="nso">Sepedi</option><option value="sr">Serbian</option><option value="st">Sesotho</option><option value="sn">Shona</option><option value="sd">Sindhi</option><option value="si">Sinhala</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="so">Somali</option><option value="es">Spanish</option><option value="su">Sundanese</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="tg">Tajik</option><option value="ta">Tamil</option><option value="tt">Tatar</option><option value="te">Telugu</option><option value="th">Thai</option><option value="ti">Tigrinya</option><option value="ts">Tsonga</option><option value="tr">Turkish</option><option value="tk">Turkmen</option><option value="ak">Twi</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="ug">Uyghur</option><option value="uz">Uzbek</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="xh">Xhosa</option><option value="yi">Yiddish</option><option value="yo">Yoruba</option><option value="zu">Zulu</option></select></div>Powered by <span style="white-space:nowrap"><a class="VIpgJd-ZVi9od-l4eHX-hSRGPd" href="https://translate.google.com/" target="_blank"><img src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/googlelogo_color_42x16dp.png" width="37px" height="14px" style="padding-right: 3px" alt="Google Translate">Translate</a></span></div></div>
+<script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: 'true',
+        layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+      }, 'google_translate_element');
+    }
+  </script>
+<script src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/element.js.download"></script>
+<div class="clear"></div>
+</div><div class="widget PopularPosts" data-version="1" id="PopularPosts1">
+<h2>Popular Posts ...</h2>
+<div class="widget-content popular-posts">
+<ul>
+<li>
+<a href="https://www.mysamplecode.com/2013/08/ios-uisearchbar-with-uitableview-example.html">iOS UISearchBar with UITableView example</a>
+</li>
+<li>
+<a href="https://www.mysamplecode.com/2012/11/android-spinner-set-selected-item-by-value.html">Android Spinner set Selected Item by Value </a>
+</li>
+<li>
+<a href="https://www.mysamplecode.com/2011/05/rpgle-sample-date-format-conversion.html">iSeries date conversion cheat sheet using RPGLE BIFs %date() %char() %dec()</a>
+</li>
+<li>
+<a href="https://www.mysamplecode.com/2011/05/rpgle-convert-date-format-jul-mdy-dmy.html">RPGLE convert date format from one to another</a>
+</li>
+<li>
+<a href="https://www.mysamplecode.com/2012/02/sql-union-different-column-names.html">SQL union between tables with different column names</a>
+</li>
+<li>
+<a href="https://www.mysamplecode.com/2011/06/rpgle-time-cheat-sheet-current-time-and.html">RPGLE %time() cheat sheet - Current Time and Time format conversion</a>
+</li>
+<li>
+<a href="https://www.mysamplecode.com/2011/05/rpgle-convert-date-to-numeric-or.html">RPGLE convert date to numeric or character - Use %date(), %Char(), %dec()</a>
+</li>
+<li>
+<a href="https://www.mysamplecode.com/2013/06/sftp-apache-commons-file-download.html">Java SFTP Apache commons file download, upload and delete example</a>
+</li>
+<li>
+<a href="https://www.mysamplecode.com/2011/05/rpgle-date-manipulation-date-difference.html">RPGLE date manipulation - Date difference, Add or substract days, months or years</a>
+</li>
+<li>
+<a href="https://www.mysamplecode.com/2011/06/iseries-save-file-savf-save-restore.html">iSeries Save file (SAVF) -  Save, Restore objects, library and IFS data</a>
+</li>
+</ul>
+<div class="clear"></div>
+</div>
+</div><div class="widget PageList" data-version="1" id="PageList1">
+<h2>Site Information ...</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="https://www.mysamplecode.com/p/terms-and-conditions.html">Terms and Conditions</a>
+</li>
+<li>
+<a href="https://www.mysamplecode.com/p/privacy-policy.html">Privacy Policy</a>
+</li>
+<li>
+<a href="https://www.mysamplecode.com/p/comments-policy.html">Comments Policy</a>
+</li>
+</ul>
+<div class="clear"></div>
+</div>
+</div></div>
+</aside>
+</div>
+</div>
+</div>
+<div style="clear: both"></div>
+<!-- columns -->
+</div>
+<!-- main -->
+</div>
+</div>
+<div class="main-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<footer>
+<div class="footer-outer">
+<div class="footer-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left footer-fauxborder-left">
+<div class="fauxborder-right footer-fauxborder-right"></div>
+<div class="region-inner footer-inner">
+<div class="foot no-items section" id="footer-1"></div>
+<table border="0" cellpadding="0" cellspacing="0" class="section-columns columns-2">
+<tbody>
+<tr>
+<td class="first columns-cell">
+<div class="foot no-items section" id="footer-2-1"></div>
+</td>
+<td class="columns-cell">
+<div class="foot no-items section" id="footer-2-2"></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- outside of the include in order to lock Attribution widget -->
+<div class="foot section" id="footer-3" name="Footer"><div class="widget Attribution" data-version="1" id="Attribution1">
+<div class="widget-content" style="text-align: center;">
+Copyright © 2011-2019 mysamplecode.com, All rights reserved. Awesome Inc. theme. Powered by <a href="https://www.blogger.com/" target="_blank">Blogger</a>.
+</div>
+<div class="clear"></div>
+</div></div>
+</div>
+</div>
+<div class="footer-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</footer>
+<!-- content -->
+</div>
+</div>
+<div class="content-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    window.setTimeout(function() {
+        document.body.className = document.body.className.replace('loading', '');
+      }, 10);
+  </script>
+
+<script type="text/javascript" src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/58807883-widgets.js.download"></script>
+<script type="text/javascript">
+window['__wavt'] = 'AOuZoY65e2TIBJUc2Cy98_BGWlJkZxTWdA:1719852867911';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d5475461039314973243','//www.mysamplecode.com/2012/04/generate-html-table-using-javascript.html','5475461039314973243');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '5475461039314973243', 'title': 'Programmers Sample Guide', 'url': 'https://www.mysamplecode.com/2012/04/generate-html-table-using-javascript.html', 'canonicalUrl': 'https://www.mysamplecode.com/2012/04/generate-html-table-using-javascript.html', 'homepageUrl': 'https://www.mysamplecode.com/', 'searchUrl': 'https://www.mysamplecode.com/search', 'canonicalHomepageUrl': 'https://www.mysamplecode.com/', 'blogspotFaviconUrl': 'https://www.mysamplecode.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': true, 'enabledCommentProfileImages': false, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-23042607-1', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': false, 'feedLinks': '\n', 'meTag': '', 'adsenseClientId': 'ca-pub-8385820531382249', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/608bb9e90ae60b5a', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '3754804830908697637', 'postImageThumbnailUrl': 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6mrU8-UiY5CMhncC9M52H2b-bTc-4JLnRasz5CLlOCx_cfVlF61d4IWvRGXWOI__CtuK9qVfW5BrZnD2Cjntox0O5wT9Hj1d4obmMTEI446JeQgsbXL0iEKWHTrxOsCUCANHfmjSOLkA/s72-c/Generate+HTML+table+dynamically+using+JavaScript.jpg', 'postImageUrl': 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6mrU8-UiY5CMhncC9M52H2b-bTc-4JLnRasz5CLlOCx_cfVlF61d4IWvRGXWOI__CtuK9qVfW5BrZnD2Cjntox0O5wT9Hj1d4obmMTEI446JeQgsbXL0iEKWHTrxOsCUCANHfmjSOLkA/s1600/Generate+HTML+table+dynamically+using+JavaScript.jpg', 'pageName': 'Dynamically generate HTML table using JavaScript - document.createElement() method', 'pageTitle': 'Programmers Sample Guide: Dynamically generate HTML table using JavaScript - document.createElement() method'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true, 'variant': 'light', 'variantId': 'light'}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Dynamically generate HTML table using JavaScript - document.createElement() method', 'description': 'This tutorial covers the following topics    Create a Row dynamically inside the table from form data  Add a Delete button to the added tabl...', 'featuredImage': 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6mrU8-UiY5CMhncC9M52H2b-bTc-4JLnRasz5CLlOCx_cfVlF61d4IWvRGXWOI__CtuK9qVfW5BrZnD2Cjntox0O5wT9Hj1d4obmMTEI446JeQgsbXL0iEKWHTrxOsCUCANHfmjSOLkA/s1600/Generate+HTML+table+dynamically+using+JavaScript.jpg', 'url': 'https://www.mysamplecode.com/2012/04/generate-html-table-using-javascript.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 3754804830908697637}}]);
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/2372121118-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/13464135-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogSearchView', new _WidgetInfo('BlogSearch1', 'sidebar-right-1', document.getElementById('BlogSearch1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_TranslateView', new _WidgetInfo('Translate1', 'sidebar-right-1', document.getElementById('Translate1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebar-right-1', document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'sidebar-right-1', document.getElementById('PageList1'), {'title': 'Site Information ...', 'links': [{'isCurrentPage': false, 'href': 'https://www.mysamplecode.com/p/terms-and-conditions.html', 'id': '8436838989880825844', 'title': 'Terms and Conditions'}, {'isCurrentPage': false, 'href': 'https://www.mysamplecode.com/p/privacy-policy.html', 'id': '5760078166065946966', 'title': 'Privacy Policy'}, {'isCurrentPage': false, 'href': 'https://www.mysamplecode.com/p/comments-policy.html', 'id': '2861546682317619065', 'title': 'Comments Policy'}], 'mobile': false, 'showPlaceholder': true, 'hasCurrentPage': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer-3', document.getElementById('Attribution1'), {}, 'displayModeFull'));
+</script><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/24px.svg" width="24" height="24" alt=""></div><div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c"><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Original text</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Rate this translation</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">Your feedback will be used to help improve Google Translate</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Good translation" aria-label="Good translation" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Poor translation" aria-label="Poor translation" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" style="" src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/saved_resource(1).html"></iframe></div></div></div>
+
+<div class="VIpgJd-ZVi9od-aZ2wEe-wOHMyf"><div class="VIpgJd-ZVi9od-aZ2wEe-OiiCO"><svg xmlns="http://www.w3.org/2000/svg" class="VIpgJd-ZVi9od-aZ2wEe" width="96px" height="96px" viewBox="0 0 66 66"><circle class="VIpgJd-ZVi9od-aZ2wEe-Jt5cK" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><link type="text/css" rel="stylesheet" href="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/13464135-lightbox_bundle.css"><script type="text/javascript" src="./Programmers Sample Guide_ Dynamically generate HTML table using JavaScript - document.createElement() method_files/2372121118-lbx.js.download"></script></body></html>

@@ -6,6 +6,7 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist",
+        "nodeVersion": "18.x",
         "installCommand": "npm install --unsafe-perm",
         "buildCommand": "npm run vercel-build"
       }
