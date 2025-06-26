@@ -2,7 +2,7 @@ import React, { useEffect,useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "./styles/Animations.css";
+import "./styles/animations.css";
 import "./styles/Portfolio.css";
 
 export default function Portfolio() {
