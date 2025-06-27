@@ -10,9 +10,6 @@ export default function Portfolio() {
     AOS.init({ duration: 1000, once: true });
   }, []);
   const [showMenu,setShowmenu]=useState(false);
-  const[mainPage,setMainpage]=useState(true);
-  const[subHeading,setSubheading]=useState(false);
-
   return (
     
   <div className="portfolio-wrapper">
@@ -38,7 +35,7 @@ export default function Portfolio() {
           {showMenu && (
             <div className="dropdown-menu">
               <div className="dropdown-item"><button className="dropdown-button" style={{color:"white"}} onClick={()=>{document.getElementById("experience")?.scrollIntoView({behavior:"smooth"})}}>Experience</button></div>
-              <div className="dropdown-item"><button className="dropdown-button" style={{color:"white"}}>Certification</button></div>
+              <div className="dropdown-item"><button className="dropdown-button" style={{color:"white"}} onClick={()=>{document.getElementById("resume")?.scrollIntoView({behavior:"smooth"})}}>Certification</button></div>
               <div className="dropdown-item"><button className="dropdown-button" style={{color:"white"}} onClick={()=>{document.getElementById("projects")?.scrollIntoView({behavior:"smooth"})}}>Projects</button></div>
               <div className="dropdown-item"><button className="dropdown-button" style={{color:"white"}} onClick={()=>{document.getElementById("resume")?.scrollIntoView({behavior:"smooth"})}}>Resume</button></div>
             </div>
@@ -105,7 +102,9 @@ export default function Portfolio() {
           </div>
 
         <div id="projects" className="portfolio-card full-width" data-aos="fade-up" data-aos-delay="200">
-          <h2 className="portfolio-section-title">Projects</h2>
+          <h2 className="portfolio-section-title proj">Projects</h2>
+          <img src="/Right.png" className="logo"></img>
+
           <div className="Project_cards">
             <div className="project">
               <h3>Note Maker :</h3>
