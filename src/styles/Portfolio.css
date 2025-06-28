@@ -76,14 +76,22 @@
   gap: 1.5rem;
 }
 
-@media (min-width: 373px) {
+@media (min-width: 768px) {
+  .portfolio-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
+  .full-width {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 375px) {
   .portfolio-card{
-    width: 310px;
+    width: 320px;
     height: 750px;
     display: block;
-    object-fit: contain;
   }
+  
 }
 
 .portfolio-card {
