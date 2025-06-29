@@ -62,7 +62,7 @@ export default function Portfolio() {
         </header>
 
         <section className="portfolio-content">
-          <div className="portfolio-card" data-aos="fade-up">
+          <div id="sum" className="portfolio-card" data-aos="fade-up">
             <div className="portfolio-card-body">
               <h2 className="portfolio-section-title">About Me</h2>
               <p className="portfolio-text">
@@ -195,7 +195,7 @@ export default function Portfolio() {
   
         </div>
 
-        <div className="portfolio-card contact full-width" data-aos="fade-up" data-aos-delay="300">
+        <div id="contact" className="portfolio-card contact full-width" data-aos="fade-up" data-aos-delay="300">
           <div className="portfolio-card-body text-center">
             <h2 className="portfolio-section-title">Contact Me</h2>
             <p className="portfolio-text">
