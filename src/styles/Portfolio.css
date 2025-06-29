@@ -296,6 +296,10 @@
   margin-left: 30px;
   margin-top: 25px;
 }
+.course_button:hover {
+  transform: scale(1.2);
+  background-color: #cc9a3f;
+}
 
 @media (min-width: 768px) {
   .portfolio-content {

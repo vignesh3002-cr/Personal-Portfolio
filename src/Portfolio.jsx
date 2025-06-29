@@ -162,7 +162,7 @@ export default function Portfolio() {
             <h2 className="portfolio-section-title">Resume/Certifications</h2>
             <p className="portfolio-text">Download my latest resume in PDF format.</p>
             <a
-              href="/Org vig.pdf"
+              href="/Vignesh R T.dev.pdf"
               download
               className="portfolio-button resume-button"
             >
