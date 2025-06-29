@@ -49,13 +49,13 @@ export default function Portfolio() {
           <h1 className="portfolio-title">Vignesh R.</h1>
           <p className="portfolio-subtitle">Full Stack Developer | Open Source Enthusiast</p>
           <div className="portfolio-socials">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/vignesh3002-cr" target="_blank" rel="noopener noreferrer">
               <Github className="icon github-icon" />
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/vignesh-r-6589222b1/" target="_blank" rel="noopener noreferrer">
               <Linkedin className="icon linkedin-icon" />
             </a>
-            <a href="mailto:youremail@example.com">
+            <a href="mailto:vigneshvickey2004@gmail.com">
               <Mail className="icon mail-icon" />
             </a>
           </div>
