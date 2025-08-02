@@ -7,13 +7,31 @@
   background: linear-gradient(to bottom,rgb(246, 80, 246), #f3f4f6);
   animation: fadeIn 1s ease;
 }
+.card-back{
+  display: none;
+}
+.project:hover{
+  transform: rotatey(180deg);
+  transition: transform 0.8s ease;
+  
+  .card-back{
+    display: block;
+    transform: rotatey(180deg);
+  }
+  .card-front{
+    display: none;
+    
+  }
+}
 
 .portfolio-header {
   text-align: center;
   padding: 2.5rem 0;
   animation: slideDown 1s ease;
 }
-
+.dropdown-menu {
+    background-color: white;
+}
 .profile-image {
   width: 127px;
   height: 135px;
@@ -112,7 +130,7 @@
 .portfolio-button {
   display: inline-block;
   padding: 0.5rem 1.5rem;
-  border-radius: 9999px;
+  border-radius: 999px;
   color: white;
   font-weight: 500;
   text-decoration: none;
@@ -120,9 +138,17 @@
 }
 .project_view{
   background-color: rgb(182, 20, 197);
-  padding: 10px;
-  margin-top: 5px;
-  margin-left: 60%;
+
+  font-size: 10px;
+  margin-left: 36%;
+  position: relative;
+  width:-webkit-fill-available;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 0px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+   color: white;
 }
 .project_view:hover{
   transform: scale(1.05);
@@ -177,56 +203,84 @@
   object-fit: contain;
 }
 #sections-container:hover{
- background-color: #f77cf1;
  width: 10%;
 }
-.dropdown-button{
-  background-color: #000000;
-  padding-bottom: 8Px;
-  padding-top: 8Px;
-  padding-right: 8Px;
-  margin-left:0% ;
-  width: 100%;
-  border-bottom: #f3f4f6 2px solid;
+.top-menu{
+  position: absolute;
+  top: 2%;
+  left: 1.5%;
+  width: 90%;
+}
+.tabler_menu_cancel {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    cursor: pointer;
+}
+.dropdown-menu {
+    background-color: white;
+    z-index: 2;
+    width: 64%;
+    position: relative;
+}
+.dropdown-icons{
+  padding: 2px 16px;
+  position: relative;
+  top: 5px;
 }
 
+.dropdown-button {
+    width: 100%;
+    padding: 20px 20px;
+    text-align: left;
+    font-size: clamp(16px,4vw,24px);
+    font-weight: 600;
+    border: 1px;
+    color: #726c6c;
+    background-color: white;
+}
 .dropdown-button:hover{
   text-transform: uppercase;
   cursor: pointer;
 }
 .codsoft-image{
-   width: 80px;
+  width: 80px;
   height: 80px;
   border-radius: 9999px;
   object-fit: cover;
   margin: 0 auto 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  position: absolute;
+
 }
-.exp{
-  position: absolute;
+.exp-container{
+  display: flex;
+  flex-direction: column(1fr,1fr);
+  gap: 30px;
+  padding: 20px;
 }
-.exp-text{
-  position: absolute;
-  width: 500px;
-  left: 65%;
-  top: 130px;
+.exp1{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 #experience{
-  height: 350px;
-  
+  height: auto; 
+}
+.exp2 {
+    margin-top: 56px;
 }
 #exp-T2{
-  position: absolute;
-  left:65%;
-  width:300px;
+  color: #1f2937;  
+  letter-spacing: 2px;
 }
 #exp-P1{
-  position: absolute;
-  top: 100%;
-  width: 300px;
-  left: 65%;
+  font-weight: 550;
   color: #292b2e;
+}
+.certification-container{
+  display: flex;
+  flex-direction: column();
+  gap: 40px;
 }
 .project_img{
   height: 200px;
@@ -249,8 +303,30 @@
   max-width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.project:hover{
-  transform: scale(1.04);
+.view-details {
+  margin-top: 20px;
+  color: #0040ff;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+  font-size: 20px;
+  margin-left: 40%;
+  position: relative;
+}
+.view-details svg{
+  position: absolute;
+  right: 8px;
+}
+.card-back img{
+    width: 40px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+li {
+    font-family: monospace;
+    font-size: 14px;
+    padding-bottom: 8px;
 }
 .Project_cards{
   display: flex;
@@ -269,11 +345,9 @@
   display: none;
 }
 .course_txt{
-  margin-left: 100px;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 .course_button{
-  margin-left: 100px;
   margin-top: 5px;
   background-color:orange;
 }
@@ -301,7 +375,7 @@
   background-color: #cc9a3f;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1030px) {
   .portfolio-content {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -310,54 +384,27 @@
     grid-column: span 2;
   }
 }
-@media (max-width: 380px) {
+@media (min-width: 0px) and (max-width:1030px)
+ { 
+  svg{
+    width: 24px;
+    height: 24px;
+  }
+  .profile-image{
+    width: 104px;
+    height: 108px;
+  }
   .portfolio-card{
-    width: 320px;
-    height: 750px;
+    max-width: 990px;
+    min-width: 100px;
     display: block;
   }
-  .exp-text{
-    position: absolute;
-    width: 192px;
-    left: 65%;
-    top: 165px;
+  .exp-container{
+    padding: 5px;
+    gap: 0px;
+  }  
+  .portfolio-section-title{
+    margin: 5px;
+    font-size: 20px;
   }
-  #experience{
-    height: 610px;
-  
-  }
-  #exp-T2{
-    position: absolute;
-    left:65%;
-    width:200px;
-  }
-  #exp-P1{
-    position: absolute;
-    top: 116px;
-    width: 200px;
-    left: 65%;
-    color: #292b2e;
-  }
-  #resume{
-    height:520px;
-  }
-  #contact{
-    height: 200px;
-  }
-  #projects{
-    height: auto;
-  }
-  #sum{
-    height: auto;
-  }
-  .dropdown-button{
-  background-color: #000000;
-  padding-bottom: 8Px;
-  padding-top: 8Px;
-  padding-right: 8Px;
-  margin-left:0% ;
-  width: 120px;
-  border-bottom: #f3f4f6 2px solid;
-}
-  
 }
