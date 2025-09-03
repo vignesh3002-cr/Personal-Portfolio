@@ -8,18 +8,42 @@ import "./styles/Portfolio.css";
 export default function Portfolio() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
+    const canvas = document.getElementById("starfield");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const stars = [];
+for (let i = 0; i < 200; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1.5,
+    speed: Math.random() * 0.5 + 0.2
+  });
+}
+
+function drawStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "white";
+  stars.forEach(star => {
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fill();
+    star.y += star.speed;
+    if (star.y > canvas.height) star.y = 0;
+  });
+  requestAnimationFrame(drawStars);
+}
+
+drawStars();
+
   }, []);
   const [showMenu,setShowmenu]=useState(false);
-  const [ShowProject,setProject]=useState(false);
-  const[isRotate,setRotate]=useState(false)
-  const cardRotet=()=>{
-    setRotate(true);
-    setTimeout(()=>{
-      setRotate(false);
-    },200);
-  }
+
   return (
     <>
+    <canvas id="starfield"></canvas>
       <div className="top-menu" onMouseLeave={()=>setShowmenu(false)}>
         {showMenu?(  
       <div className="dropdown-menu">
@@ -83,7 +107,7 @@ Resume</button></div>
             src="/profile.jpg"
             className="profile-image"
           />
-          <h1 className="portfolio-title">Vignesh R.</h1>
+          <h1 className="portfolio-title gradient-text">Vignesh R.</h1>
           <p className="portfolio-subtitle">Full Stack Developer | Open Source Enthusiast</p>
           <div className="portfolio-socials">
             <a href="https://github.com/vignesh3002-cr" target="_blank" rel="noopener noreferrer">
@@ -453,6 +477,7 @@ Resume</button></div>
         </div>
       </section>
   </div>
+  
   </>
   );
 

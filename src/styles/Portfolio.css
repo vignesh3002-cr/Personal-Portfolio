@@ -1,11 +1,21 @@
 /* src/styles/portfolio.css */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: -1; /* keeps it behind content */
+}
 
 .portfolio-wrapper {
   min-height: 100vh;
   padding: 1.5rem;
   font-family: sans-serif;
-  background: linear-gradient(to bottom,rgb(246, 80, 246), #f3f4f6);
   animation: fadeIn 1s ease;
+  z-index: 1;
+  
 }
 .card-back{
   display: none;
@@ -44,9 +54,33 @@
 .portfolio-title {
   font-size: 2.25rem;
   font-weight: bold;
-  color: #111827;
   margin-bottom: 0.5rem;
   transition: transform 0.7s;
+}
+.gradient-text {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(
+    to right,
+    #e952af,
+    #482438,
+    #282627
+  ); /* two or more colors */
+  background-size: 200% auto; /* makes gradient wider */
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  animation: moveGradient 3s linear infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
 }
 
 .portfolio-title:hover {
