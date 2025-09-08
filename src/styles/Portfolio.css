@@ -82,6 +82,47 @@
     background-position: 0% center;
   }
 }
+.box {
+  position: relative;
+   /* your purple background */
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    white 10%,
+    transparent 20%
+  );
+  animation: rotate 3s linear infinite;
+  z-index: 1;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: inherit;
+  background-color: #a64ca6; /* same as main bg */
+  z-index: 2;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .portfolio-title:hover {
   transform: scale(1.05);
@@ -141,6 +182,8 @@
 
 .portfolio-card-body {
   padding: 1.5rem;
+  z-index: 100;
+  position: relative;
 }
 
 .portfolio-section-title {
@@ -190,6 +233,7 @@
 }
 .resume-button {
   background-color: #16a34a;
+
 }
 
 .resume-button:hover {

@@ -123,7 +123,7 @@ Resume</button></div>
         </header>
 
         <section className="portfolio-content">
-          <div id="sum" className="portfolio-card" data-aos="fade-up">
+          <div id="sum" className="portfolio-card box" data-aos="fade-up">
             <div className="portfolio-card-body">
               <h2 className="portfolio-section-title">About Me</h2>
               <p className="portfolio-text">
@@ -134,7 +134,7 @@ Resume</button></div>
             </div>
           </div>
 
-          <div className="portfolio-card" data-aos="fade-up" data-aos-delay="100">
+          <div className="portfolio-card box glow-box" data-aos="fade-up" data-aos-delay="100">
             <div className="portfolio-card-body">
               <h2 className="portfolio-section-title">Skills</h2>
                 <div className="skills-grid">
@@ -162,7 +162,8 @@ Resume</button></div>
             </div>
           </div>
 
-        <div id="projects" className="portfolio-card full-width" data-aos="fade-up" data-aos-delay="200">
+        <div id="projects" className="portfolio-card full-width box glow-box" data-aos="fade-up" data-aos-delay="200">
+          <div className="portfolio-card-body">
           <h2 className="portfolio-section-title proj" style={{margin:10}}>Projects</h2>
           <img src="/Right.png" className="logo"></img>
           
@@ -367,11 +368,12 @@ Resume</button></div>
               </div>    
             </div>
           </div>
+          </div>
           
         </div>
-        <section id="experience" className="portfolio-card" data-aos="fade-up">
+        <section id="experience" className="portfolio-card box" data-aos="fade-up">
           
-          <div className="exp-container">
+          <div className="exp-container portfolio-card-body">
           <div className="exp1">
             <h2 className="portfolio-section-title" style={{margin:10}}>Experience</h2>
             <img
@@ -388,9 +390,10 @@ Resume</button></div>
               * Presected findings at weekly research meetings. 
               </p>
             </div>
+            
             </div>
                
-          <div className="exp-container">
+          <div className="exp-container portfolio-card-body">
           <div className="exp1">
             <img style={{marginLeft:32}}
               src="/pixellium.jpeg"
@@ -411,7 +414,7 @@ Resume</button></div>
         </section>
 
 
-        <div id="resume" className="portfolio-card" data-aos="fade-up" data-aos-delay="250">
+        <div id="resume" className="portfolio-card box" data-aos="fade-up" data-aos-delay="250">
           <div className="portfolio-card-body">
             <h2 className="portfolio-section-title">Resume/Certifications</h2>
             <p className="portfolio-text">Download my latest resume in PDF format.</p>
@@ -461,7 +464,7 @@ Resume</button></div>
   
         </div>
 
-        <div id="contact" className="portfolio-card contact full-width" data-aos="fade-up" data-aos-delay="300">
+        <div id="contact" className="portfolio-card contact full-width box" data-aos="fade-up" data-aos-delay="300">
           <div className="portfolio-card-body text-center">
             <h2 className="portfolio-section-title">Contact Me</h2>
             <p className="portfolio-text">
