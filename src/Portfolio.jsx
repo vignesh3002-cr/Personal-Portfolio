@@ -186,7 +186,6 @@ Resume</button></div>
                 <ul>
                   <li>Customers can easily share their feedback about the company’s services based on their personal experiences and opinions.</li>
                   <li>In this project the technologies and languages i used are HTML, CSS, JavaScript, React.js, Node.js, Express.js, API's and Mongo DB(Data Management).</li>
-                  <li>It is deploy in two cloud platforms.Front-end is in Vercel and Back-end is in Render. </li>
                 </ul>
 
                 <a className="project_view" href="https://customer-feedback-frontend-git-main-vignesh3002-crs-projects.vercel.app/">

@@ -99,7 +99,7 @@
   background: conic-gradient(
     from 0deg,
     transparent 0%,
-    white 10%,
+    rgb(239, 180, 3) 10%,
     transparent 20%
   );
   animation: rotate 3s linear infinite;
@@ -194,7 +194,7 @@
 }
 
 .portfolio-text {
-  color: #4b5563;
+  color: #202731;
   line-height: 1.6;
 }
 
