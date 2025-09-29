@@ -418,7 +418,7 @@ Resume</button></div>
             <h2 className="portfolio-section-title">Resume/Certifications</h2>
             <p className="portfolio-text">Download my latest resume in PDF format.</p>
             <a
-              href="/Vignesh R T.dev.pdf"
+              href="/Vignesh_FS_Dev.pdf"
               download
               className="portfolio-button resume-button"
             >
