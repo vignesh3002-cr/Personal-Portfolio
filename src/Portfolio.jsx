@@ -374,19 +374,19 @@ Resume</button></div>
           
           <div className="exp-container portfolio-card-body">
           <div className="exp1">
-            <h2 className="portfolio-section-title" style={{margin:10}}>Experience</h2>
+            <h2 className="portfolio-section-title" style={{margin:20}}>Experience</h2>
             <img
-              src="/CodSoft.png"
+              src="/vcodz.jpg"
               className="codsoft-image"
             />
           </div>
             <div className="exp2">
-              <h3 id="exp-T2">Front-End Development Intern</h3>
-              <p id="exp-P1">(UI, UX Designing, Aug 2024 - Sep 2024)</p>
+              <h3 id="exp-T2">Machine Learning Intern</h3>
+              <p id="exp-P1">(Machine Learning, Deep Learning, Jun 2025 – Sep 2025)</p>
               <p className="portfolio-text exp-text">
-              * Made a valuable contribution to Codsoft by developing and deploying interactive projects such as a math calcultor, landing page, and portfolio site.<br></br> 
-              * With the group of members as a team we enhanced user interfaceusing React, CSS,  and JavaScript, improving overall user experience.<br></br>
-              * Presected findings at weekly research meetings. 
+                  ◦ Contributed to projects like loan approval predictor and life expectancy analysis.<br></br>
+                  ◦ Applied Python, NumPy, Pandas to preprocess data and train models.<br></br>
+                  ◦ Delivered findings in team meetings, ensuring data-driven decision-making.
               </p>
             </div>
             
@@ -395,17 +395,17 @@ Resume</button></div>
           <div className="exp-container portfolio-card-body">
           <div className="exp1">
             <img style={{marginLeft:32}}
-              src="/pixellium.jpeg"
+              src="/CodSoft.png"
               className="codsoft-image"
             />
           </div>
             <div className="exp2" style={{marginLeft:36,marginTop:8}}>
-              <h3 id="exp-T2">Full-stack Developer</h3>
-              <p id="exp-P1">(React, Node, Jul 2025 - Aug 2025)</p>
+              <h3 id="exp-T2">Front-End Development Intern</h3>
+              <p id="exp-P1">(UI, UX Designing, Aug 2024 – Sep 2024)</p>
               <p className="portfolio-text exp-text">
-              * Made a valuable contribution to Pixellium by developing and deploying interactive projects such as a Company landing page and portfolio site.<br></br> 
-              * With the group of members as a team we enhanced user interfaceusing React, CSS,  and JavaScript, improving overall user experience.<br></br>
-              * Presected findings at weekly research meetings. 
+                  ◦ Built and deployed interactive projects: calculator, landing page, portfolio site.<br></br>
+                  ◦ Improved UI/UXwith React, CSS, JavaScript, enhancing usability.<br></br>
+                  ◦ Participated in weekly team meetings and code reviews.
               </p>
             </div>
             </div>
@@ -418,7 +418,7 @@ Resume</button></div>
             <h2 className="portfolio-section-title">Resume/Certifications</h2>
             <p className="portfolio-text">Download my latest resume in PDF format.</p>
             <a
-              href="/Vignesh_FS_Dev.pdf"
+              href="/Vignesh_R_FL.pdf"
               download
               className="portfolio-button resume-button"
             >
